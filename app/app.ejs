@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="./assets/js/scripts/uicore.js"></script>
+    <script src="./assets/js/scripts/uibinder.js"></script>
+    <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
+    <style>
+        body {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAAA/CAIAAAC3jNulAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAl0lEQVR4nO3QMQEAMBADoTb+Rb8JxkMCf9uL0yZWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKHaumACEcmCFzgAAAABJRU5ErkJggg==');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            -webkit-user-select: none;
+        }
+
+        video#background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #main {
+            display: none;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+
+        #loadingContainer {
+        z-index: 9;
+                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAAA/CAIAAAC3jNulAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAl0lEQVR4nO3QMQEAMBADoTb+Rb8JxkMCf9uL0yZWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKFYoVihWKHaumACEcmCFzgAAAABJRU5ErkJggg==');
+            background-size: cover;
+        }
+        </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="" type="video/mp4">
+    </video>
+    <div id="main">
+        <%- include('welcome') %>
+        <%- include('login') %>
+        <%- include('waiting') %>
+        <%- include('loginOptions') %>
+        <%- include('settings') %>
+        <%- include('landing') %>
+        <%- include('status') %>
+    </div>
+    <%- include('overlay') %>
+    <div id="loadingContainer">
+        <div id="loadingContent">
+            <div id="loadSpinnerContainer">
+                <img id="loadCenterImage" src="assets/images/Loading.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

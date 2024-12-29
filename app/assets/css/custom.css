@@ -1,0 +1,62 @@
+.market-container {
+    display: none; /* Hide by default, will be shown when content is ready */
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+.market-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card.with-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: white;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.product-name:hover {
+    text-decoration: underline;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #fff;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}

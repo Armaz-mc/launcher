@@ -1,0 +1,27 @@
+# Custom Language File for Launcher Customizer
+
+[ejs.app]
+title = "Armaz Studio Launcher"
+
+[ejs.landing]
+mediaGitHubURL = "https://armaz-mc.com"
+mediaTwitterURL = ""
+mediaInstagramURL = ""
+mediaYouTubeURL = "https://www.youtube.com/@armazmc"
+mediaDiscordURL = "https://discord.com/invite/s96tb8sttP"
+
+[ejs.settings]
+sourceGithubLink = "https://armaz-mc.com"
+supportLink = "https://armaz-mc.com/support/tickets"
+selectLanguage = "Select a Language"
+changeLanguageTitle = "Change the launcher language"
+changeLanguageDesc = "You can change the language in the list below. This text will not change if you change the language so you can find your wayback here to change it back"
+
+[ejs.welcome]
+welcomeHeader = "WELCOME TO ARMAZ"
+welcomeDescription = """
+ArmaZ is a modded Minecraft server where you need to survive in an open-world with zombies and other survivors. 
+"""
+
+[ejs.overlay]
+changedLanguageHeader = "You changed the previous language"

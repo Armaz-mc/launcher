@@ -1,0 +1,136 @@
+<div id="landingContainer" style="display: none;">
+    <div id="upper">
+        <div id="left">
+			<div id="image_seal_container">
+				<div id="glitch_image_seal"></div>
+				<div id="updateAvailableTooltip"></div>
+			</div>
+			<div id="top-sidebar">
+				<button class="mediaButton" id="CreatorsMediaButton">
+					<i class="fa-solid fa-signal-stream" style="font-size: 22px;padding: 1.5px 0;"></i>
+				</button>
+				<div class="mediaButton" style="padding: 5.5px 10px;">
+					<a href="https://armaz-mc.com" id="linkURL">
+						<i class="fa-light fa-globe"></i>
+					</a>
+				</div>
+				<div class="mediaButton" style="font-size: 20px;padding-bottom: 7px;">
+					<a href="https://armaz-mc.com/discord" id="discordURL">
+						<i class="fa-brands fa-discord"></i>
+					</a>
+				</div>
+			</div>
+			<div id="bottom-sidebar">
+					<button id="user_content">
+						<div id="avatarContainer">
+						</div>
+						
+					</button>
+			                            <button class="mediaButton" id="settingsMediaButton">
+											<i class="fa-solid fa-gear"></i>
+                            </button>
+
+			</div>
+			</div>
+        <div id="right">
+			<%if (process.platform =""== 'darwin') { %>
+				<div id="frameButtonDockDarwin">
+					<button class="frameButtonDarwin fCb" id="frameButtonDarwin_close" tabIndex="-1"></button>
+					<button class="frameButtonDarwin fMb" id="frameButtonDarwin_minimize" tabIndex="-1"></button>
+				</div>
+				<% } else{ %>
+					<div id="frameButtonDockWin">
+						<button class="frameButton fMb" id="frameButton_minimize" tabIndex="-1">
+							<svg name="TitleBarMinimize" width="10" height="10" viewBox="0 0 12 12">
+								<rect stroke="#ffffff" fill="#ffffff" width="10" height="1" x="1" y="6"></rect>
+							</svg>
+						</button>
+						<button class="frameButton fCb" id="frameButton_close" tabIndex="-1">
+							<svg name="TitleBarClose" width="10" height="10" viewBox="0 0 12 12">
+								<polygon stroke="#ffffff" fill="#ffffff" fill-rule="evenodd" points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1"></polygon>
+							</svg>
+						</button>
+					</div>
+				<% } %>
+        </div>
+    </div>
+
+    <div id="lower">
+        <div id="left">
+            <div class="bot_wrapper">
+            </div>
+        </div>
+        <div id="center">
+            <div class="bot_wrapper">
+                <div id="content">
+                    <button id="newsButton">
+                        <!--<img src="assets/images/icons/arrow.svg" id="newsButtonSVG"/>-->
+                        <div id="newsButtonAlert" style="display: none;"></div>
+                        <svg id="newsButtonSVG" viewBox="0 0 24.87 13.97">
+                            <defs>
+                                <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;}</style>
+                            </defs>
+                            <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                        </svg>
+                        &#10;<span id="newsButtonText"><%- lang('landing.newsButton') %></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div class="bot_wrapper" style="width: 100%;">
+				                    <div id="_status_wrapper">	
+                        <span id="player_count"><%- lang('landing.serverStatusPlaceholder') %></span>
+                    </div>
+                <div id="launch_content">
+                    <button id="launch_button">
+						<i class="fa-solid fa-circle-play" style="font-size: 14px; margin-right: 2px;"></i><%- lang('landing.launchButton') %></button>
+					<div id="server_selection_button_warper">
+                    <button id="server_selection_button" <%- lang('landing.launchButtonPlaceholder') %></button>
+					</div>
+
+                </div>
+                <div id="launch_details">
+                    <div id="launch_details_left">
+                        <span id="launch_progress_label">0%</span>
+                        <div class="bot_divider"></div>
+                    </div>
+                    <div id="launch_details_right">
+                        <progress id="launch_progress" value="22" max="100"></progress>
+                        <span id="launch_details_text" class="bot_label"><%- lang('landing.launchDetails') %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/scripts/landing.js"></script>
+</div>
+
+		<link
+		  rel="stylesheet"
+		  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+      >
+
+			<link
+			  rel="stylesheet"
+			  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+      >
+
+				<link
+				  rel="stylesheet"
+				  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+      >
+
+					<link
+					  rel="stylesheet"
+					  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+      >
+
+						<link
+						  rel="stylesheet"
+						  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+      >
+
+							<link
+							  rel="stylesheet"
+							  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
