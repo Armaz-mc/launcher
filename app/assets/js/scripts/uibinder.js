@@ -60,8 +60,7 @@ function getCurrentView(){
 
 /* select radom background video */
 document.addEventListener('DOMContentLoaded', () => {
-    const randomVideo = Math.floor(Math.random() * 5) + 1;
-    const videoUrl = `https://hastastudios.com.br/videos/${randomVideo}.mp4`;
+    const videoUrl = `https://data.armaz-mc.com/video/1.mp4`;
     const videoElement = document.getElementById('background-video');
     const sourceElement = videoElement.querySelector('source');
     if (videoElement && sourceElement) {

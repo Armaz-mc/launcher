@@ -157,9 +157,9 @@ document.getElementById('settingsMediaButton').onclick = async e => {
 }
 
 // Bind settings button
-document.getElementById('CreatorsMediaButton').onclick = async e => {
-    switchView(getCurrentView(), VIEWS.status)
-}
+//document.getElementById('CreatorsMediaButton').onclick = async e => {
+  //  switchView(getCurrentView(), VIEWS.status)
+//}
 
 // Bind selected account
 async function fetchSkinAndConvertToBase64(username) {

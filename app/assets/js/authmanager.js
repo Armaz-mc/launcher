@@ -28,28 +28,24 @@ const log = LoggerUtil.getLogger('AuthManager')
  * @param {string} password - Mot de passe.
  * @returns {Promise<Object>} - Retourne un compte généré.
  */
-exports.addAccount = async function(username, password, twoFactorCode = '') {
+exports.addAccount = async function(username, password, twoFactorCode) {
     try {
-        // Créer une instance du client AzAuth
         const client = new AuthClient('https://armaz-mc.com'); // Remplacez par l'URL de votre site Azuriom
-
-        // Tentez la connexion via AzAuth
         let result = await client.login(username, password, twoFactorCode);
         console.log(result);
-        console.log(result.status);
-        console.log(result.uuid);
+
         if (result.status === 'pending' && result.requires2fa) {
-            // Si une vérification 2FA est nécessaire, demandez le code à l'utilisateur
-            throw '2FA required';
+            const twoFactorCode = '' // IMPORTANT: Replace with the 2FA user temporary code
+
+            let result = await client.login(username, password, twoFactorCode);
         }
 
-        // Si la connexion échoue
+
         if (result.status !== 'success') {
             throw 'Erreur lors de la connexion avec AzAuth : ' + JSON.stringify(result);
         }
 
-        // Si la connexion est réussie, générez un identifiant aléatoire
-        const randomId = Array.from({ length: 10 }, () => 
+        const randomId = Array.from({ length: 10 }, () =>
             'abcdefghijklmnopqrstuvwxyz1234567890'[Math.floor(Math.random() * 36)]
         ).join('');
 
@@ -57,23 +53,26 @@ exports.addAccount = async function(username, password, twoFactorCode = '') {
         const accountName = result.username;
         const accessToken = result.accessToken;
 
-        // Ajout du compte dans la configuration
         const ret = ConfigManager.addMojangAuthAccount(accountId, accessToken, accountName, accountName);
 
         if (!ConfigManager.getClientToken()) {
             ConfigManager.setClientToken(`client_${randomId}`);
         }
 
-        // Sauvegarder la configuration
         ConfigManager.save();
         log.info(`Compte ajouté avec succès: ${accountName}`);
         return ret;
 
     } catch (err) {
+        if (err.requires2FA) {
+            // Traiter le cas spécifique de 2FA
+            throw '2FA required';
+        }
         log.error('Erreur inattendue lors de l’ajout du compte:', err);
         return Promise.reject(err);
     }
 }
+
 
 /**
  * Ajoute un compte Microsoft (toujours valide).

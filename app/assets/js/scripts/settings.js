@@ -1526,10 +1526,10 @@ const settingsAboutChangelogText   = settingsTabAbout.getElementsByClassName('se
 const settingsAboutChangelogButton = settingsTabAbout.getElementsByClassName('settingsChangelogButton')[0]
 
 // Bind the devtools toggle button.
-document.getElementById('settingsAboutDevToolsButton').onclick = (e) => {
-    let window = remote.getCurrentWindow()
-    window.toggleDevTools()
-}
+//document.getElementById('settingsAboutDevToolsButton').onclick = (e) => {
+//   let window = remote.getCurrentWindow()
+//    window.toggleDevTools()
+//}
 
 /**
  * Return whether or not the provided version is a prerelease.

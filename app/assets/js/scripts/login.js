@@ -18,7 +18,7 @@ const loginRememberOption   = document.getElementById('loginRememberOption')
 const loginButton           = document.getElementById('loginButton')
 const loginForm             = document.getElementById('loginForm')
 const login2FAError = document.getElementById('login2FAError')
-const login2FA = document.getElementById('login2FA')
+const login2FA = document.getElementById('login2fa')
 const twoFactorContainer = document.getElementById('twoFactorContainer')
 // Control variables.
 let lu = false, lp = false
