@@ -9,7 +9,7 @@ const logger = LoggerUtil.getLogger('ConfigManager')
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 
-const dataPath = path.join(sysRoot, '.ArmazLauncher')
+const dataPath = path.join(sysRoot, '.dead-down-studio')
 
 const launcherDir = app.getPath('userData')
 
