@@ -21,7 +21,7 @@ exports.loadLanguage = function(id){
         lang = merge(lang || {}, toml.parse(fs.readFileSync(path.join(process.cwd(), 'lang', `${id}.toml`))) || {})
     } else {
         if(process.platform === 'darwin'){
-            lang = merge(lang || {}, toml.parse(fs.readFileSync(path.join(appPath, 'Contents', 'Resources', 'lang', `${id}.toml`))) || {})
+            lang = merge(lang || {}, toml.parse(fs.readFileSync(path.join(__dirname, '..', 'lang', `${id}.toml`))) || {})
     } else {
         lang = merge(lang || {}, toml.parse(fs.readFileSync(path.join(process.cwd(), 'resources', 'lang', `${id}.toml`))) || {})
 }
