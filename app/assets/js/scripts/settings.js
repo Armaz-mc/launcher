@@ -1527,8 +1527,8 @@ const settingsAboutChangelogButton = settingsTabAbout.getElementsByClassName('se
 
 // Bind the devtools toggle button.
 //document.getElementById('settingsAboutDevToolsButton').onclick = (e) => {
-//   let window = remote.getCurrentWindow()
-//    window.toggleDevTools()
+//    let window = remote.getCurrentWindow()
+ //   window.toggleDevTools()
 //}
 
 /**

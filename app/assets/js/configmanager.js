@@ -44,9 +44,17 @@ async function reloadUsername() {
 
     if (acc && acc.type === 'mojang') {
         const gg = exports.getSelectedAccount();
-        let response = await fetch(`https://auth.hastastudios.com.br/api/yggdrasil/sessionserver/session/minecraft/profile/${gg['uuid']}`);
+        let response = await fetch('https://armaz-mc.com/api/auth/verify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                access_token: gg['accessToken']
+            }),
+        });
         response = await response.json();
-        exports.addMojangAuthAccount(gg['uuid'], gg['accessToken'], response['name'], response['name']);
+        exports.addMojangAuthAccount(gg['uuid'], gg['access_token'], response['username'], response['username']);
     }
 }
 

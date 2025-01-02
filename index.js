@@ -234,7 +234,6 @@ function createWindow() {
         minHeight: 700,
         icon: getPlatformIcon('SealCircle'),
         frame: false,
-
         webPreferences: {
             preload: path.join(__dirname, 'app', 'assets', 'js', 'preloader.js'),
             nodeIntegration: true,
@@ -242,7 +241,7 @@ function createWindow() {
             backgroundThrottling: false,
             disableCSP: true
         },
-        backgroundColor: '#000000'
+        backgroundColor: '#000000',
     });
 
     remoteMain.enable(win.webContents);

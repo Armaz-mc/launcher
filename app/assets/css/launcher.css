@@ -96,6 +96,7 @@ button {
     height: 20px
 }
 
+
 /* Undraggable region on the left and right of the frame. */
 .frameResizableVert {
     width: 2px;
